@@ -7,9 +7,9 @@
     $page = isset($_GET['page']) ? $_GET['page'] : false;
 
     $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : false;
-  	$nama = isset($_SESSION['nama']) ? $_SESSION['nama'] : 'nama tidak di temukan';
-  	$email = isset($_SESSION['email']) ? $_SESSION['email'] : 'email tidak di temukan';
-	  $level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
+    $nama = isset($_SESSION['nama']) ? $_SESSION['nama'] : 'nama tidak di temukan';
+    $email = isset($_SESSION['email']) ? $_SESSION['email'] : 'email tidak di temukan';
+    $level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
 ?>
 
 <!DOCTYPE html>
@@ -89,32 +89,29 @@
         <div class="header-right">
           <div class="menu-malasngoding">
             <ul>
-
               <?php
-							if($user_id){
-								echo "
-                  <li
-                    class='dropdown'><a href='".BASE_URL."index.php?page=profile_user/info_pribadi&module=pesanan&action=list'><b>$nama</b></a>
-                      <ul class='isi-dropdown'>
-                        <li>
-                          <a href='".BASE_URL."user_access/logout.php'>Logout</a>
-                        </li>
-                      </ul>
-                  </li>
-                  
-                  ";
-							}else{
-								echo "
-                  <li
-                    class='dropdown'><a href='".BASE_URL."index.php?page=user_access/register'>REGISTER</a>
-                  </li>
-                  <li
-                    class='dropdown'><a href='".BASE_URL."index.php?page=user_access/login'>LOGIN</a>
-                  </li>
-                  ";
-							}
-						?>
-              
+	        if($user_id){
+		  echo "
+                    <li
+                      class='dropdown'><a href='".BASE_URL."index.php?page=profile_user/info_pribadi&module=pesanan&action=list'><b>$nama</b></a>
+                        <ul class='isi-dropdown'>
+                          <li>
+                            <a href='".BASE_URL."user_access/logout.php'>Logout</a>
+                          </li>
+                        </ul>
+                    </li>
+		    ";
+		}else{
+		  echo "
+                    <li
+                      class='dropdown'><a href='".BASE_URL."index.php?page=user_access/register'>REGISTER</a>
+                    </li>
+                    <li
+                      class='dropdown'><a href='".BASE_URL."index.php?page=user_access/login'>LOGIN</a>
+                    </li>
+                    ";
+		}
+		?>
             </ul>
           </div>
 
